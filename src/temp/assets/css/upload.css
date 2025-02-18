@@ -1,0 +1,161 @@
+main {
+    width: 100%;
+    height: calc(100vh - 5em);
+    display: flex;
+    justify-content: center;
+}
+
+main form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 
+    table style
+*/
+
+main form .container {
+    border-bottom: 1px solid var(--light-clr);
+    width: 55%;
+    min-height: calc(100vh - 10em);
+    max-height: calc(100vh - 10em);
+    padding: 2em;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    display: flex;
+    justify-content: center;
+}
+
+main form .container table {
+    width: 100%;
+    height: fit-content;
+    border-collapse: collapse;
+}
+
+main form .container table thead tr{
+    border-bottom: 1px solid var(--grey-clr);
+    height: 2em;
+    text-align: left;
+}
+
+main form .container table thead tr th{
+    border-right: 1px solid var(--grey-clr);
+    padding-left: 1em;
+}
+
+
+main form .container table tbody {
+    text-align: left;
+    font-size: 15px;
+}
+
+main form .container table tbody tr {
+    height: 3em;
+}
+
+main .container #file-name input[type='checkbox'] {
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+main .container #file-name {
+    color: var(--light-clr);
+    font-weight: 600;
+}
+
+main .container #file-length {
+    color: var(--grey-clr);
+    font-size: 14px;
+}
+
+main .container .uploaded {
+    color: #0c7c4f;
+    font-weight: 700;
+}
+
+main .container .not-uploaded {
+    color: #ec344d;
+    font-weight: 700;
+}
+
+/* 
+    button style
+*/
+
+main .button {
+    padding: 1em;
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+main .button label {
+    border: 2px solid var(--accent-clr);
+    border-radius: 10px;
+    width: 25%;
+    height: 2.6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+main .button label input{
+    display: none;
+}
+
+main .button button {
+    border: none;
+    border-radius: 10px;
+    width: 60%;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--light-clr);
+    background: var(--accent-clr);
+}
+
+
+/* Responsive design for tablets */
+@media (max-width: 768px) {
+    main form .container {
+        width: 100%;
+    }
+
+    main .button {
+        width: 80%;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    main .button label, main .button button {
+        width: 100%;
+    }
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 480px) {
+    main form .container {
+        width: 100%;
+    }
+
+    main .button {
+        width: 95%;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    main .button label, main .button button {
+        width: 100%;
+    }
+}

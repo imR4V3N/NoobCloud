@@ -1,0 +1,205 @@
+main {
+    width: 100%;
+    height: calc(100vh - 5em);
+    display: flex;
+    justify-content: center;
+}
+
+main .container {
+    border-bottom: 1px solid var(--light-clr);
+    width: 55%;
+    max-height: calc(100vh - 7em);
+    padding: 2em;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+main .container .card {
+    border: 1px solid var(--light-clr);
+    border-radius: 10px;
+    width: 13em;
+    height: 20em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    padding: .5em;
+    gap: .8em;
+}
+
+main .container .card .icon {
+    position: relative;
+    width: 100%;
+    height: 70%;
+    background: var(--light-clr);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+main .container .card .icon #insert_drive_file {
+    color: var(--dark-clr);
+    font-size: calc(10em*90/100);
+}
+
+main .container .card .icon .action {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-low-clr);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    left: 0;
+    top: 100%;
+    backdrop-filter: blur(2px);
+    z-index: 1;
+}
+
+main .container .card .icon .action span{
+    background: var(--light-clr);
+    color: var(--dark-clr);
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+
+main .container .card .icon:hover .action {
+    top: 0;
+}
+
+main .container .card .info {
+    width: 90%;
+    height: calc(100% - 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-top: 1px solid;
+    gap: 1em;
+}
+
+main .container .card .info .file-name {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+main .container .card .info .file-detail {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--grey-clr);
+}
+
+main .add-btn {
+    background: var(--accent-clr);
+    width: 2.5em;
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+    bottom: 3em;
+    right: 15%;
+}
+
+main .add-btn span {
+    font-size: 25px;
+    color: var(--light-clr);
+}
+
+
+
+section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(3px);
+    display: none;
+    place-items: center;
+    z-index: 1;
+}
+
+section form {
+    background: #012029;
+    border-radius: 10px;
+    width: 15%;
+    height: 30%;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5em;
+    color: var(--light-clr);
+}
+
+section form input {
+    width: 70%;
+    padding: .5em;
+    height: 2.9em;
+    outline: none;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+section form .button {
+    width: 70%;
+    height: fit-content;
+    display: flex;
+    gap: 1em;
+}
+
+section form .button button {
+    height: 2.5em;
+    padding: .5em;
+    border-radius: 10px;
+    width: 45%;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+section form .button button[type='submit'] {
+    background: var(--accent-clr);
+    border: none;
+    color: var(--light-clr);
+}
+
+section form .button button[type='reset'] {
+    background: var(--dark-clr);
+    border: 1px solid var(--accent-clr);
+    color: var(--light-clr);
+}
+
+
+/* Responsive design for tablets */
+@media (max-width: 768px) {
+    section form {
+        width: 60%;
+    }
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 480px) {
+    section form {
+        width: 80%;
+    }
+}

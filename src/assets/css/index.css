@@ -1,0 +1,236 @@
+main {
+    width: 100%;
+    height: calc(100vh - 5em);
+    display: flex;
+    justify-content: center;
+}
+
+main .container {
+    border-bottom: 1px solid var(--light-clr);
+    width: 45%;
+    max-height: calc(100vh - 7em);
+    padding: 2em;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+main .container .card {
+    border: 1px solid var(--light-clr);
+    border-radius: 10px;
+    width: 8em;
+    height: 11em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    padding: .5em;
+    gap: .8em;
+}
+
+main .container .card .icon {
+    width: 100%;
+    height: 70%;
+    background: var(--light-clr);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+main .container .card .icon span {
+    color: var(--dark-clr);
+    font-size: calc(10em*70/100);
+}
+
+main .container .card .info {
+    width: 90%;
+    height: calc(100% - 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid;
+}
+
+main .container .card .info h3 {
+    font-size: 15px;
+}
+
+main .container .card .info .menu-icon {
+    cursor: pointer;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    font-size: 24px;
+}
+
+main .container .card .menu {
+    display: none;
+    position: absolute;
+    bottom: 36px;
+    right: 8px;
+    border-radius: 3px;
+    background: var(--dark-clr);
+    z-index: 1;
+}
+
+main .container .card .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main .container .card .menu ul li {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+main .container .card .menu ul li a {
+    color: var(--light-clr);
+}
+
+main .container .card .menu ul li:hover {
+    background-color: #161616;
+}
+
+main .add-btn {
+    background: var(--accent-clr);
+    width: 2.5em;
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+    bottom: 5em;
+    right: 15%;
+}
+
+main .add-btn span {
+    font-size: 25px;
+    color: var(--light-clr);
+}
+
+/* 
+    Form for add file 
+*/
+
+section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(3px);
+    display: none;
+    place-items: center;
+    z-index: 1;
+}
+
+section form {
+    background: #012029;
+    border-radius: 10px;
+    width: 15%;
+    height: 30%;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5em;
+    color: var(--light-clr);
+}
+
+section form input {
+    width: 70%;
+    padding: .5em;
+    height: 2.9em;
+    outline: none;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+section form .button {
+    width: 70%;
+    height: fit-content;
+    display: flex;
+    gap: 1em;
+}
+
+section form .button button {
+    height: 2.5em;
+    padding: .5em;
+    border-radius: 10px;
+    width: 45%;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+section form .button button[type='submit'] {
+    background: var(--accent-clr);
+    border: none;
+    color: var(--light-clr);
+}
+
+section form .button button[type='reset'] {
+    background: var(--dark-clr);
+    border: 1px solid var(--accent-clr);
+    color: var(--light-clr);
+}
+
+/* Responsive design for tablets */
+@media (max-width: 768px) {
+    main .container {
+        width: 80%;
+    }
+
+    section form {
+        width: 50%;
+        height: auto;
+    }
+
+    section form input {
+        width: 90%;
+    }
+
+    section form .button {
+        width: 90%;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    section form .button button {
+        width: 100%;
+    }
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 480px) {
+    main .container {
+        width: 80%;
+    }
+
+    section form {
+        width: 80%;
+        height: auto;
+    }
+
+    section form input {
+        width: 100%;
+    }
+
+    section form .button {
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    section form .button button {
+        width: 100%;
+    }
+}
