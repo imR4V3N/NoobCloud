@@ -42,5 +42,5 @@ Build.bat
 You just have to configure the path in the script to your tomcat server
 
 ```
-set destination=C:\Program Files\Apache Software Foundation\Tomcat 10.0\webapps**
+set destination=C:\Program Files\Apache Software Foundation\Tomcat 10.0\webapps
 ```
